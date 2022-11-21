@@ -29,21 +29,21 @@ public class UserAgentTest {
                 .jsonPath();
         response.prettyPrint();
 
-        String platformRes = response.getJsonObject("platform");
-        String browserRes = response.getJsonObject("browser");
-        String deviceRes = response.getJsonObject("device");
+        String platformResource = response.getJsonObject("platform");
+        String browserResource = response.getJsonObject("browser");
+        String deviceResource = response.getJsonObject("device");
 
         System.out.println(user_agent);
-        if (!platform.equals(platformRes)) {
-            System.out.println("Неверная платформа: " + platform + "; ожидаемая: " + platformRes);
+        if (!platform.equals(platformResource)) {
+            System.out.println("Неверная платформа: " + platform + "; ожидаемая: " + platformResource);
         }
-        if (!browser.equals(browserRes)) {
-            System.out.println("Неверный браузер: " + browser + "; ожидаемый: " + browserRes);
+        if (!browser.equals(browserResource)) {
+            System.out.println("Неверный браузер: " + browser + "; ожидаемый: " + browserResource);
         }
-        if (!device.equals(deviceRes)) {
-            System.out.println("Неверный девайс: " + platform + "; ожидаемый: " + deviceRes);
+        if (!device.equals(deviceResource)) {
+            System.out.println("Неверный девайс: " + platform + "; ожидаемый: " + deviceResource);
         }
-        assertTrue((platform.equals(platformRes)) && (browser.equals(browserRes)) && (device.equals(deviceRes)), "Ошибка");
+        assertTrue((platform.equals(platformResource)) && (browser.equals(browserResource)) && (device.equals(deviceResource)), "Ошибка");
     }
 
 }
