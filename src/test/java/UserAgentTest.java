@@ -14,7 +14,7 @@ public class UserAgentTest {
             "'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 Edg/91.0.100.0', Web, Chrome, No",
             "'Mozilla/5.0 (iPad; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1', Mobile, No, iPhone"
     })
-    void ex13Test(String user_agent, String platform, String browser, String device) {
+    public void userAgentTest(String user_agent, String platform, String browser, String device) {
 
         Map<String, String> query = new HashMap<>();
         query.put("user_agent", user_agent);
@@ -25,7 +25,7 @@ public class UserAgentTest {
         JsonPath response = RestAssured
                 .given()
                 .header("User-Agent", user_agent)
-                .get("https://playground.learnqa.ru/api/user_agent_check")
+                .get("https://playground.learnqa.ru/ajax/api/user_agent_check")
                 .jsonPath();
         response.prettyPrint();
 
